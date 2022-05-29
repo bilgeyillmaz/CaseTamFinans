@@ -31,6 +31,11 @@ namespace CaseUI.Controllers
         [HttpPost]
         public ActionResult Login(UserForLoginDto userForLoginDto)
         {
+            if (userForLoginDto.Password == null)
+            {
+                ModelState.AddModelError("Hata", "Lütfen bilgilerinizi eksiksiz doldurunuz!");
+                return View();
+            }
             var userToLogin = _authService.Login(userForLoginDto);
             if (!userToLogin.Success)
             {

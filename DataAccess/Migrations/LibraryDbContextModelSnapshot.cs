@@ -42,15 +42,12 @@ namespace DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
@@ -119,7 +116,7 @@ namespace DataAccess.Migrations
                         {
                             BookId = 1,
                             BookName = "1984",
-                            CategoryName = "Science Finction, Dystopian Finction",
+                            CategoryName = "Bilim-Kurgu, Distopik-Kurgu",
                             NumberOfPages = 352,
                             PublishingHouse = "MK Publications",
                             Status = true,
@@ -128,8 +125,8 @@ namespace DataAccess.Migrations
                         new
                         {
                             BookId = 2,
-                            BookName = "The Unbearable Lightness of Being",
-                            CategoryName = "Novel",
+                            BookName = "Varolmanın Dayanılmaz Hafifliği",
+                            CategoryName = "Roman",
                             NumberOfPages = 320,
                             PublishingHouse = "HarperCollins Publishers",
                             Status = true,
@@ -138,8 +135,8 @@ namespace DataAccess.Migrations
                         new
                         {
                             BookId = 3,
-                            BookName = "Animal Farm",
-                            CategoryName = "Dystopian Finction",
+                            BookName = "Hayvan Çiftliği",
+                            CategoryName = "Distopik Kurgu",
                             NumberOfPages = 112,
                             PublishingHouse = "Secker & Warburg",
                             Status = true,
@@ -148,8 +145,8 @@ namespace DataAccess.Migrations
                         new
                         {
                             BookId = 4,
-                            BookName = "Jonathan Livingston Seagull",
-                            CategoryName = "Self-Help",
+                            BookName = "Martı Jonathan Livingston",
+                            CategoryName = "Kişisel Gelişim",
                             NumberOfPages = 96,
                             PublishingHouse = "Harpercollins",
                             Status = true,
@@ -158,8 +155,8 @@ namespace DataAccess.Migrations
                         new
                         {
                             BookId = 5,
-                            BookName = "The Diary of a Young Girl",
-                            CategoryName = "Autobiography",
+                            BookName = "Anne Frank'ın Hatıra Defteri",
+                            CategoryName = "Otobiyografi",
                             NumberOfPages = 356,
                             PublishingHouse = "Puffin",
                             Status = true,
@@ -169,7 +166,7 @@ namespace DataAccess.Migrations
                         {
                             BookId = 6,
                             BookName = "Fahrenheit 451",
-                            CategoryName = "Science Finction",
+                            CategoryName = "Bilim-Kurgu",
                             NumberOfPages = 192,
                             PublishingHouse = "HarperCollins",
                             Status = true,
@@ -178,8 +175,8 @@ namespace DataAccess.Migrations
                         new
                         {
                             BookId = 7,
-                            BookName = "Madonna in a Fur Coat",
-                            CategoryName = "Novel",
+                            BookName = "Kürk Mantolu Madonna",
+                            CategoryName = "Roman",
                             NumberOfPages = 160,
                             PublishingHouse = "Penguin Classics",
                             Status = true,

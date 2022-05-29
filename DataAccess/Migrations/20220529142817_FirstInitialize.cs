@@ -58,9 +58,9 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: false)
@@ -75,13 +75,13 @@ namespace DataAccess.Migrations
                 columns: new[] { "BookId", "BookName", "CategoryName", "NumberOfPages", "PublishingHouse", "Status", "WriterFullName" },
                 values: new object[,]
                 {
-                    { 1, "1984", "Science Finction, Dystopian Finction", 352, "MK Publications", true, "George Orwell" },
-                    { 2, "The Unbearable Lightness of Being", "Novel", 320, "HarperCollins Publishers", true, "Milan Kundera" },
-                    { 3, "Animal Farm", "Dystopian Finction", 112, "Secker & Warburg", true, "George Orwell" },
-                    { 4, "Jonathan Livingston Seagull", "Self-Help", 96, "Harpercollins", true, "Richard Bach" },
-                    { 5, "The Diary of a Young Girl", "Autobiography", 356, "Puffin", true, "Anne Frank" },
-                    { 6, "Fahrenheit 451", "Science Finction", 192, "HarperCollins", true, "Ray Bradbury" },
-                    { 7, "Madonna in a Fur Coat", "Novel", 160, "Penguin Classics", true, "Sabahattin Ali" }
+                    { 1, "1984", "Bilim-Kurgu, Distopik-Kurgu", 352, "MK Publications", true, "George Orwell" },
+                    { 2, "Varolmanın Dayanılmaz Hafifliği", "Roman", 320, "HarperCollins Publishers", true, "Milan Kundera" },
+                    { 3, "Hayvan Çiftliği", "Distopik Kurgu", 112, "Secker & Warburg", true, "George Orwell" },
+                    { 4, "Martı Jonathan Livingston", "Kişisel Gelişim", 96, "Harpercollins", true, "Richard Bach" },
+                    { 5, "Anne Frank'ın Hatıra Defteri", "Otobiyografi", 356, "Puffin", true, "Anne Frank" },
+                    { 6, "Fahrenheit 451", "Bilim-Kurgu", 192, "HarperCollins", true, "Ray Bradbury" },
+                    { 7, "Kürk Mantolu Madonna", "Roman", 160, "Penguin Classics", true, "Sabahattin Ali" }
                 });
         }
 

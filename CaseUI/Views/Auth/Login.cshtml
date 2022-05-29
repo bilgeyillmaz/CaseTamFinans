@@ -34,12 +34,15 @@
                         <label style="color: green"><b> <i class="bi bi-person-circle"></i> GİRİŞ</b></label>
                     </div>
                     <div class="form-group">
+                        <span class="alert-danger" m-b-5>@Html.ValidationMessage("Hata")</span>
+                    </div>
+                    <div class="form-group">
                         <label for="Email" class="control-label" style="color:white">E-posta Adresi</label>
-                        <input asp-for="Email" class="form-control" style="color:green" />
+                        <input asp-for="Email" class="form-control" style="color:green" placeholder="kullanici@kullanici.com" />
                     </div>
                     <div class="form-group">
                         <label for="Password" class="control-label" style="color:white">Şifre</label>
-                        <input asp-for="Password" class="form-control" style="color:green" type="password" />
+                        <input asp-for="Password" class="form-control" style="color:green" type="password" placeholder="Şifre" />
                     </div>
 
                     <div class="form-group">

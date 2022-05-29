@@ -56,17 +56,5 @@ namespace CaseAPI.Controllers
 
             return BadRequest(result.Message);
         }
-
-
-        //[HttpGet("getall")]
-        //public IActionResult GetAll()
-        //{
-        //    var result = _userService.GetAll();
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest(result);
-        //}
     }
 }
