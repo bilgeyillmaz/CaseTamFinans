@@ -1,0 +1,54 @@
+﻿@using Entities.Concrete
+@model Book
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <h4 class="text-success">Kitap Bilgilerini Güncelle</h4>
+        <br />
+        <form asp-action="Update" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookId" />
+            <input type="hidden" asp-for="Status" />
+            <div class="form-group">
+                Kitap Adı
+                <input asp-for="BookName" class="form-control" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Kategori
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Yazar Adı
+                <input asp-for="WriterFullName" class="form-control" />
+                <span asp-validation-for="WriterFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Yayınevi
+                <input asp-for="PublishingHouse" class="form-control" />
+                <span asp-validation-for="PublishingHouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Sayfa Sayısı
+                <input asp-for="NumberOfPages" class="form-control" />
+                <span asp-validation-for="NumberOfPages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-success" />
+                <input type="reset" value="Clear" class="btn btn-danger" />
+                <a asp-action="GetAll" class="btn btn-primary">Kitap Listesi</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+

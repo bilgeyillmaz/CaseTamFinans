@@ -1,0 +1,47 @@
+﻿@using Entities.Concrete
+@model Book
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <h1>Yeni Kitap Ekle</h1>
+            @using (Html.BeginForm("Add", "Books", FormMethod.Post))
+            {
+                @Html.Label("Kitap Adı")
+                @Html.TextBoxFor(b => b.BookName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.BookName)</label>
+                <br />
+                @Html.Label("Kategori")
+                @Html.TextBoxFor(b => b.CategoryName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.CategoryName)</label>
+                <br />
+                @Html.Label("Yazar Adı")
+                @Html.TextBoxFor(b => b.WriterFullName, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.WriterFullName)</label>
+                <br />
+                @Html.Label("Yayınevi")
+                @Html.TextBoxFor(b => b.PublishingHouse, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.PublishingHouse)</label>
+                <br />
+                @Html.Label("Sayfa Sayısı")
+                @Html.TextBoxFor(b => b.NumberOfPages, new { @class = "form-control" })
+                <label class="text-danger">@Html.ValidationMessageFor(b => b.NumberOfPages)</label>
+                <br />
+                <button class="btn btn-success"> Kaydet </button>
+                <input type="reset" value="Temizle" class="btn btn-danger" />
+            }
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+</div>
+
+

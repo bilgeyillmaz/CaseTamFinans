@@ -1,0 +1,78 @@
+﻿@using Entities.Concrete
+@model List<Book>
+
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kitap Listesi</h1>
+
+<div class="container">
+    <table class="table table-striped table-bordered" id="myTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Kitap Adı</th>
+                <th>Kategori</th>
+                <th>Yazar</th>
+                <th>Yayınevi</th>
+                <th>Sayfa Sayısı</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WriterFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishingHouse)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfPages)
+                    </td>
+                    <td>
+                        @*<input type="button" value="Güncelle" name="Update" href="~/Books/Update/@item.BookId" class="btn btn-warning" />*@
+                        <a asp-action="Update" asp-route-id="@item.BookId" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i> Güncelle</a>
+
+                    </td>
+                    <td>
+                        @*<input type="button" value="Sil" name="Delete" href="~/Books/Delete/@item.BookId" class="btn btn-danger" />*@
+                        <a asp-action="Delete" asp-route-id="@item.BookId" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Sil</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-danger" href="~/Books/Add" role="button">Yeni Kitap Ekle</a>
+</div>
+
+
+@*@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")*@
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json',
+                },
+            });
+        });
+    </script>
+}
+
